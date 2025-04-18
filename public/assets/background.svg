@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 786 759">
+  <defs>
+    <filter id="filter0_d_206_79" x="163" y="76" width="707" height="686" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+      <feOffset dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="20"></feGaussianBlur>
+      <feComposite in2="hardAlpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.298039 0 0 0 0 0.686275 0 0 0 0 0.313726 0 0 0 0.45 0"></feColorMatrix>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_206_79"></feBlend>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_206_79" result="shape"></feBlend>
+    </filter>
+    <filter id="filter1_d_206_79" x="81" y="0" width="866" height="839" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+      <feOffset dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="20"></feGaussianBlur>
+      <feComposite in2="hardAlpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.298039 0 0 0 0 0.686275 0 0 0 0 0.313726 0 0 0 0.45 0"></feColorMatrix>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_206_79"></feBlend>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_206_79" result="shape"></feBlend>
+    </filter>
+  </defs>
+  <g filter="url(#filter0_d_206_79)" opacity="0.4" transform="matrix(1, 0, 0, 1, -121.000015, -36)">
+    <ellipse cx="516.5" cy="415" rx="313.5" ry="303" fill="white"></ellipse>
+    <path d="M829.5 415C829.5 582.05 689.381 717.5 516.5 717.5C343.619 717.5 203.5 582.05 203.5 415C203.5 247.95 343.619 112.5 516.5 112.5C689.381 112.5 829.5 247.95 829.5 415Z" stroke="#0a5066aa"></path>
+  </g>
+  <g filter="url(#filter1_d_206_79)" opacity="0.4" transform="matrix(1, 0, 0, 1, -121.000015, -36)">
+    <ellipse cx="514" cy="415.5" rx="393" ry="379.5" fill="white"></ellipse>
+    <path d="M906.5 415.5C906.5 624.8 730.788 794.5 514 794.5C297.212 794.5 121.5 624.8 121.5 415.5C121.5 206.2 297.212 36.5 514 36.5C730.788 36.5 906.5 206.2 906.5 415.5Z" stroke="#0a5066aa"></path>
+  </g>
+</svg>
