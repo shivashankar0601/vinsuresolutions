@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+	/* --primary: #4d63da; */
+	/* --primary-lite: #3a4bb1; */
+	--primary: #0a5066;
+	--primary-lite: #1390b6;
+}
+
+body {
+	/* background-color: #b4bcf388; */
+	background-color: white;
+}
+
+/* General Button and Link Styles */
+button,
+a {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out; /* Smooth transition */
+	outline: none;
+	text-align: center;
+	text-decoration: none; /* Removes default underline from anchor tags */
+}
+
+button {
+	font-size: 14px;
+	padding: 10px 20px;
+	border-radius: 6px; /* Rounded corners */
+}
+
+/* Primary Button (filled with color) */
+.button-primary {
+	background-color: var(--primary); /* Primary button background */
+	color: white; /* White text */
+	border: none;
+}
+
+.button-primary:hover {
+	background-color: var(--primary-lite); /* Darker shade on hover */
+	box-shadow: 0 4px 8px rgba(77, 99, 218, 0.3); /* Subtle shadow effect */
+}
+
+.button-primary:active {
+	background-color: var(--primary-lite); /* Keep same color as hover */
+	transform: scale(0.98); /* Shrink effect on click */
+}
+
+.button-primary:focus {
+	box-shadow: 0 0 5px rgba(77, 99, 218, 0.6); /* Subtle glow effect on focus */
+}
+
+/* Secondary Button (white background with blue border and text) */
+.button-secondary {
+	background-color: white; /* White background */
+	color: var(--primary); /* Blue text */
+	border: 2px solid var(--primary); /* Blue border */
+}
+
+.button-secondary:hover {
+	background-color: var(--primary); /* Blue background on hover */
+	color: white; /* Change text to white */
+	border-color: var(--primary-lite); /* Darker border color on hover */
+}
+
+.button-secondary:active {
+	background-color: var(--primary-lite); /* Keep same color as hover */
+	color: white; /* Text remains white on click */
+	transform: scale(0.98); /* Shrink effect */
+}
+
+.button-secondary:focus {
+	box-shadow: 0 0 5px rgba(77, 99, 218, 0.6); /* Focus glow */
+}
+
+/* Tertiary Button (transparent background, blue text with underline) */
+.button-tertiary {
+	background-color: transparent; /* Transparent background */
+	color: var(--primary); /* Blue text */
+	border: none;
+	text-decoration: underline; /* Underline by default */
+}
+
+.button-tertiary:hover {
+	color: var(--primary-lite); /* Darker blue on hover */
+	text-decoration: none; /* Remove underline on hover */
+}
+
+.button-tertiary:active {
+	color: var(--primary-lite); /* Same as hover */
+	transform: scale(0.98); /* Shrink effect */
+}
+
+.button-tertiary:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgba(77, 99, 218, 0.6); /* Focus glow effect */
+}
+
+/* Disabled Button */
+button:disabled,
+a:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none; /* Disable any interaction */
+}
+
+/* Links: Same styling as Tertiary Button, but with smoother transition effects */
+a {
+	color: var(--primary); /* Link color */
+	text-decoration: none; /* Remove default underline */
+	transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+	color: var(--primary-lite); /* Darker blue on hover */
+	text-decoration: underline; /* Add underline on hover */
+}
+
+a:active {
+	color: var(--primary-lite); /* Same as hover */
+	transform: scale(0.98); /* Shrink effect on click */
+	background: none; /* No background on click */
+	box-shadow: none; /* No shadow on click */
+}
+
+a:focus {
+	outline: none;
+	/*box-shadow: 0 0 5px rgba(77, 99, 218, 0.6); /* Focus glow effect */
+}
+
+/* Optional: Adding smoother text decoration transition for links */
+a,
+a:hover {
+	transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+/* Links that are visited (optional) */
+a:visited {
+	color: var(--primary); /* Keep visited links in the same blue */
+}
+
+/* Navbar Styles */
+.vs-nav {
+	/* background-color: #b4bcf3; */
+	color: #ffffff;
+}
+
+.vs-nav-label {
+	/* color: #ffffff; */
+	font-weight: 600;
+}
+
+.vs-nav-logo {
+	font-weight: 700;
+}
+
+.vs-footer {
+	background-color: var(--primary);
+	color: #ffffff;
+	& a {
+		color: #ffffff;
+	}
+}
+
+.text-primary {
+	color: var(--primary);
+}
+
+.text-primary-lite {
+	color: var(--primary-lite);
+}
+
+.bg-primary {
+	background-color: var(--primary);
+}
+
+.bg-primary-lite {
+	background-color: var(--primary-lite);
+}
