@@ -23,7 +23,7 @@
 // 					onClick={toggleDrawer}
 // 					size="sm"
 // 					color="blue"
-// 					className="rounded-full shadow-lg bg-primary-lite text-white"
+// 					className="rounded-full shadow-lg bg-primary-dark text-white"
 // 				>
 // 					Contact Us
 // 				</Button>
@@ -32,8 +32,8 @@
 // 			<div className="fixed right-4 z-50 transform -translate-y-1/2">
 // 				<Button
 // 					onClick={toggleDrawer}
-// 					// className="flex flex-col items-center gap-1 px-3 py-2 rounded-full shadow-xl bg-primary-lite text-white hover:scale-105 transition-transform"
-// 					className="flex flex-col items-center gap-1 px-3 py-2 rounded-full shadow-xl bg-primary-lite text-white flex flex-row gap-2"
+// 					// className="flex flex-col items-center gap-1 px-3 py-2 rounded-full shadow-xl bg-primary-dark text-white hover:scale-105 transition-transform"
+// 					className="flex flex-col items-center gap-1 px-3 py-2 rounded-full shadow-xl bg-primary-dark text-white flex flex-row gap-2"
 // 				>
 // 					<ChatBubbleBottomCenterTextIcon className="h-4 w-4" />
 // 					<span className="text-xs font-bold">Contact US</span>

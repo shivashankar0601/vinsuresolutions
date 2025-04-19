@@ -66,11 +66,11 @@ const Home = () => {
 							className="mx-auto my-6 w-full leading-snug  !text-2xl lg:max-w-3xl lg:!text-5xl"
 						>
 							Get ready to experience a new era of{" "}
-							<span className="text-primary-lite leading-snug ">
+							<span className="text-primary leading-snug ">
 								talent acquisition
 							</span>{" "}
 							and{" "}
-							<span className="text-primary-lite leading-snug">
+							<span className="text-primary leading-snug">
 								staffing excellence
 							</span>
 							.
@@ -105,7 +105,7 @@ const Home = () => {
 					</Typography>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 						<div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-							<RectangleStackIcon className="h-12 w-12 mb-4 text-primary-lite" />
+							<RectangleStackIcon className="h-12 w-12 mb-4 text-primary-dark" />
 							<Typography
 								variant="h5"
 								className="mb-2 text-gray-800"
@@ -121,7 +121,7 @@ const Home = () => {
 							</Typography>
 						</div>
 						<div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-							<UserCircleIcon className="h-12 w-12 mb-4 text-primary-lite" />
+							<UserCircleIcon className="h-12 w-12 mb-4 text-primary-dark" />
 							<Typography
 								variant="h5"
 								className="mb-2 text-gray-800"
@@ -137,7 +137,7 @@ const Home = () => {
 							</Typography>
 						</div>
 						<div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-							<CommandLineIcon className="h-12 w-12 mb-4 text-primary-lite" />
+							<CommandLineIcon className="h-12 w-12 mb-4 text-primary-dark" />
 							<Typography
 								variant="h5"
 								className="mb-2 text-gray-800"
@@ -169,7 +169,7 @@ const Home = () => {
 					<Button
 						color="primary"
 						size="lg"
-						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+						className="rounded-full px-8 py-3 bg-primary-dark font-semibold"
 					>
 						View Openings
 					</Button>
@@ -189,7 +189,7 @@ const Home = () => {
 					<Button
 						color="primary"
 						size="lg"
-						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+						className="rounded-full px-8 py-3 bg-primary-dark font-semibold"
 					>
 						Get in Touch
 					</Button>
@@ -209,7 +209,7 @@ const Home = () => {
 					<Button
 						color="primary"
 						size="lg"
-						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+						className="rounded-full px-8 py-3 bg-primary-dark font-semibold"
 					>
 						Follow Us
 					</Button>

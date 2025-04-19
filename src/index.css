@@ -2,9 +2,9 @@
 
 :root {
 	/* --primary: #4d63da; */
-	/* --primary-lite: #3a4bb1; */
-	--primary: #0a5066;
-	--primary-lite: #1390b6;
+	/* --primary-dark: #3a4bb1; */
+	--primary: #1390b6;
+	--primary-dark: #0a5066;
 }
 
 body {
@@ -37,12 +37,12 @@ button {
 }
 
 .button-primary:hover {
-	background-color: var(--primary-lite); /* Darker shade on hover */
+	background-color: var(--primary-dark); /* Darker shade on hover */
 	box-shadow: 0 4px 8px rgba(77, 99, 218, 0.3); /* Subtle shadow effect */
 }
 
 .button-primary:active {
-	background-color: var(--primary-lite); /* Keep same color as hover */
+	background-color: var(--primary-dark); /* Keep same color as hover */
 	transform: scale(0.98); /* Shrink effect on click */
 }
 
@@ -60,11 +60,11 @@ button {
 .button-secondary:hover {
 	background-color: var(--primary); /* Blue background on hover */
 	color: white; /* Change text to white */
-	border-color: var(--primary-lite); /* Darker border color on hover */
+	border-color: var(--primary-dark); /* Darker border color on hover */
 }
 
 .button-secondary:active {
-	background-color: var(--primary-lite); /* Keep same color as hover */
+	background-color: var(--primary-dark); /* Keep same color as hover */
 	color: white; /* Text remains white on click */
 	transform: scale(0.98); /* Shrink effect */
 }
@@ -82,12 +82,12 @@ button {
 }
 
 .button-tertiary:hover {
-	color: var(--primary-lite); /* Darker blue on hover */
+	color: var(--primary-dark); /* Darker blue on hover */
 	text-decoration: none; /* Remove underline on hover */
 }
 
 .button-tertiary:active {
-	color: var(--primary-lite); /* Same as hover */
+	color: var(--primary-dark); /* Same as hover */
 	transform: scale(0.98); /* Shrink effect */
 }
 
@@ -112,12 +112,12 @@ a {
 }
 
 a:hover {
-	color: var(--primary-lite); /* Darker blue on hover */
+	color: var(--primary-dark); /* Darker blue on hover */
 	text-decoration: underline; /* Add underline on hover */
 }
 
 a:active {
-	color: var(--primary-lite); /* Same as hover */
+	color: var(--primary-dark); /* Same as hover */
 	transform: scale(0.98); /* Shrink effect on click */
 	background: none; /* No background on click */
 	box-shadow: none; /* No shadow on click */
@@ -155,7 +155,7 @@ a:visited {
 }
 
 .vs-footer {
-	background-color: var(--primary);
+	background-color: var(--primary-dark);
 	color: #ffffff;
 	& a {
 		color: #ffffff;
@@ -166,23 +166,23 @@ a:visited {
 	color: var(--primary);
 }
 
-.text-primary-lite {
-	color: var(--primary-lite);
+.text-primary-dark {
+	color: var(--primary-dark);
 }
 
 .bg-primary {
 	background-color: var(--primary);
 }
 
-.bg-primary-lite {
-	background-color: var(--primary-lite);
+.bg-primary-dark {
+	background-color: var(--primary-dark);
 }
 
-.border-primary-lite {
+.border-primary {
 	border-color: #ffffff;
 	border-width: 2px;
 }
 
-.border-primary-lite:hover {
-	border-color: var(--primary-lite);
+.border-primary:hover {
+	border-color: var(--primary);
 }
