@@ -1,5 +1,3 @@
-import "./Search.css";
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -49,14 +47,14 @@ const Search = () => {
 
 	const handleSearch = () => {
 		if (query.trim()) {
-			navigate(`/jobs?search=${encodeURIComponent(query.trim())}`);
+			navigate(`/job-search?search=${encodeURIComponent(query.trim())}`);
 		}
 	};
 
 	const handleSuggestionClick = (role) => {
 		setQuery(role);
 		setSuggestions([]);
-		navigate(`/jobs?search=${encodeURIComponent(role)}`);
+		navigate(`/job-search?search=${encodeURIComponent(role)}`);
 	};
 
 	return (

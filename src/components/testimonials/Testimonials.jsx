@@ -43,7 +43,7 @@ const testimonials = [
 
 const Testimonials = () => {
 	return (
-		<section className="py-20 bg-gray-50">
+		<section className="py-20">
 			<div className="container mx-auto px-6 text-center max-w-6xl">
 				<Typography variant="h2" className="text-gray-800 mb-6">
 					Testimonials
@@ -76,7 +76,7 @@ const Testimonials = () => {
 					{testimonials.map(
 						({ name, feedback, designation, rating }, index) => (
 							<SwiperSlide key={index}>
-								<Card className="bg-white shadow-md hover:shadow-lg transition-shadow h-full mx-2 cursor-pointer my-2">
+								<Card className="bg-gray-50 shadow-md hover:shadow-lg hover:bg-gray-100 transition-shadow h-full mx-2 cursor-pointer my-2">
 									<CardBody className="flex flex-col items-center text-center p-6 h-full">
 										<ChatBubbleBottomCenterTextIcon className="h-10 w-10 text-primary-lite mb-4" />
 										<Typography
