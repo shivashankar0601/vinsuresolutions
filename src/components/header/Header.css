@@ -1,0 +1,46 @@
+/* Links: Same styling as Tertiary Button, but with smoother transition effects */
+a {
+	color: #ffffffaa; /* Link color */
+	text-decoration: none; /* Remove default underline */
+	transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+	font-weight: 600; /* Font weight for links */
+}
+
+a:hover {
+	color: #ffffff;
+}
+
+a:active {
+	transform: scale(0.98); /* Shrink effect on click */
+	background: none; /* No background on click */
+	box-shadow: none; /* No shadow on click */
+}
+
+a:focus {
+	outline: none;
+}
+
+/* Optional: Adding smoother text decoration transition for links */
+a,
+a:hover {
+	transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+/* Links that are visited (optional) */
+a:visited {
+	color: var(--primary); /* Keep visited links in the same blue */
+}
+
+/* Navbar Styles */
+.vs-nav {
+	/* background-color: #b4bcf3; */
+	color: #ffffff;
+}
+
+.vs-nav-label {
+	font-weight: 600;
+}
+
+.vs-nav-logo {
+	font-weight: 700;
+}
