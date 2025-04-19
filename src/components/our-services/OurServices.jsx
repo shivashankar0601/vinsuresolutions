@@ -47,7 +47,7 @@ const services = [
 
 const OurServices = () => {
 	return (
-		<section className="py-16 bg-gray-50">
+		<section className="py-16">
 			<div className="container mx-auto px-6">
 				<Typography
 					variant="h2"
@@ -60,15 +60,15 @@ const OurServices = () => {
 						<Card
 							key={title}
 							shadow={true}
-							className="group hover:shadow-xl transition-shadow duration-300 hover:bg-gray-100 cursor-pointer"
+							className="group hover:shadow-xl transition-shadow duration-300 bg-gray-50 hover:bg-gray-100 cursor-pointer"
 						>
 							<CardHeader
 								floated={false}
-								className="flex items-center justify-center h-24 bg-white shadow-none group-hover:bg-gray-100"
+								className="flex items-center justify-center h-24 bg-gray-50 shadow-none group-hover:bg-gray-100"
 							>
 								{icon}
 							</CardHeader>
-							<CardBody className="group-hover:bg-gray-100">
+							<CardBody className="bg-gray-50 group-hover:bg-gray-100">
 								<Typography
 									variant="h5"
 									className="mb-2 text-primary"

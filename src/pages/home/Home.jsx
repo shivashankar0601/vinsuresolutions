@@ -17,10 +17,12 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import circles from "@assets/background.svg";
 import ContactDrawer from "@components/contact-drawer/ContactDrawer";
-import Search from "../../components/search/Search";
-import WhyChooseUs from "../../components/why-choose-us/WhyChooseUs";
-import OurServices from "../../components/our-services/OurServices";
-import Testimonials from "../../components/testimonials/Testimonials";
+import ContactBadge from "@components/contact-drawer/ContactBadge";
+import Search from "@components/search/Search";
+import WhyChooseUs from "@components/why-choose-us/WhyChooseUs";
+import OurServices from "@components/our-services/OurServices";
+import Testimonials from "@components/testimonials/Testimonials";
+import { Toaster } from "react-hot-toast";
 
 function NavItem({ children }) {
 	return (
@@ -53,7 +55,8 @@ const Home = () => {
 
 	return (
 		<div className="space-y-10 my-10">
-			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			<Toaster position="top-right" />
+			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
 				{/* <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-[url('/assets/background.svg')] bg-center bg-contain bg-no-repeat"> */}
 				<div className="grid mt-16">
 					<div className="container mx-auto px-4 text-center">
@@ -82,18 +85,18 @@ const Home = () => {
 						</Typography>
 					</div>
 				</div>
-				<ContactDrawer />
+				<ContactBadge />
 			</section>
-			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
 				<Search />
 			</section>
-			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
 				<OurServices />
 			</section>
-			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
 				<WhyChooseUs />
 			</section>
-			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
 				<Testimonials />
 			</section>
 			{/* <div className="container mx-auto text-center">
@@ -151,7 +154,7 @@ const Home = () => {
 						</div>
 					</div>
 				</div> */}
-			{/* <section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			{/* <section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white shadow-md rounded">
 				<div className="container mx-auto text-center">
 					<Typography variant="h2" className="mb-6 text-gray-800">
 						Join Our Team
@@ -172,7 +175,7 @@ const Home = () => {
 					</Button>
 				</div>
 			</section> */}
-			{/* <section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			{/* <section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white shadow-md rounded">
 				<div className="container mx-auto text-center">
 					<Typography variant="h2" className="mb-6 text-gray-800">
 						Contact Us
@@ -192,7 +195,7 @@ const Home = () => {
 					</Button>
 				</div>
 			</section> */}
-			{/* <section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+			{/* <section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white shadow-md rounded">
 				<div className="container mx-auto text-center">
 					<Typography variant="h2" className="mb-6 text-gray-800">
 						Follow Us

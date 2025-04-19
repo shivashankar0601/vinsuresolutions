@@ -177,3 +177,12 @@ a:visited {
 .bg-primary-lite {
 	background-color: var(--primary-lite);
 }
+
+.border-primary-lite {
+	border-color: #ffffff;
+	border-width: 2px;
+}
+
+.border-primary-lite:hover {
+	border-color: var(--primary-lite);
+}

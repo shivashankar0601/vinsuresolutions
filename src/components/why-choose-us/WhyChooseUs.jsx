@@ -42,7 +42,7 @@ const features = [
 
 const WhyChooseUs = () => {
 	return (
-		<section className="py-20 bg-white">
+		<section className="py-20">
 			<div className="container mx-auto px-6 text-center">
 				<Typography variant="h2" className="text-gray-800 mb-6">
 					Why Choose Vinsure Solutions ?
@@ -60,7 +60,7 @@ const WhyChooseUs = () => {
 						<Card
 							key={title}
 							shadow={false}
-							className="p-6 text-left bg-gray-50 hover:bg-gray-100 transition-all rounded-xl cursor-pointer"
+							className="p-6 text-left bg-white hover:bg-gray-100 border-primary-lite transition-all rounded-xl cursor-pointer"
 						>
 							<div className="mb-4">{icon}</div>
 							<Typography
