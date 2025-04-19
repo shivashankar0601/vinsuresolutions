@@ -17,6 +17,10 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import circles from "@assets/background.svg";
 import ContactDrawer from "@components/contact-drawer/ContactDrawer";
+import Search from "../../components/search/Search";
+import WhyChooseUs from "../../components/why-choose-us/WhyChooseUs";
+import OurServices from "../../components/our-services/OurServices";
+import Testimonials from "../../components/testimonials/Testimonials";
 
 function NavItem({ children }) {
 	return (
@@ -48,8 +52,8 @@ const Home = () => {
 	console.log(circles);
 
 	return (
-		<>
-			<section className="p-8 pt-4">
+		<div className="space-y-10 my-10">
+			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
 				{/* <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-[url('/assets/background.svg')] bg-center bg-contain bg-no-repeat"> */}
 				<div className="grid mt-16">
 					<div className="container mx-auto px-4 text-center">
@@ -80,8 +84,19 @@ const Home = () => {
 				</div>
 				<ContactDrawer />
 			</section>
-			<section className="bg-white py-8 px-4 lg:px-0">
-				<div className="container mx-auto text-center">
+			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<Search />
+			</section>
+			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<OurServices />
+			</section>
+			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<WhyChooseUs />
+			</section>
+			<section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<Testimonials />
+			</section>
+			{/* <div className="container mx-auto text-center">
 					<Typography variant="h2" className="mb-6 text-gray-800">
 						Our Services
 					</Typography>
@@ -135,9 +150,69 @@ const Home = () => {
 							</Typography>
 						</div>
 					</div>
+				</div> */}
+			{/* <section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<div className="container mx-auto text-center">
+					<Typography variant="h2" className="mb-6 text-gray-800">
+						Join Our Team
+					</Typography>
+					<Typography
+						variant="paragraph"
+						className="mb-6 text-gray-600"
+					>
+						We are always looking for talented individuals to join
+						our team. Check out our current job openings.
+					</Typography>
+					<Button
+						color="primary"
+						size="lg"
+						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+					>
+						View Openings
+					</Button>
 				</div>
-			</section>
-		</>
+			</section> */}
+			{/* <section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<div className="container mx-auto text-center">
+					<Typography variant="h2" className="mb-6 text-gray-800">
+						Contact Us
+					</Typography>
+					<Typography
+						variant="paragraph"
+						className="mb-6 text-gray-600"
+					>
+						Have questions? Get in touch with us today.
+					</Typography>
+					<Button
+						color="primary"
+						size="lg"
+						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+					>
+						Get in Touch
+					</Button>
+				</div>
+			</section> */}
+			{/* <section className="min-h-[300px] p-10 odd:bg-white even:bg-gray-50 shadow-md rounded">
+				<div className="container mx-auto text-center">
+					<Typography variant="h2" className="mb-6 text-gray-800">
+						Follow Us
+					</Typography>
+					<Typography
+						variant="paragraph"
+						className="mb-6 text-gray-600"
+					>
+						Stay updated with our latest news and insights.
+					</Typography>
+					<Button
+						color="primary"
+						size="lg"
+						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+					>
+						Follow Us
+					</Button>
+				</div>
+			</section> */}
+		</div>
 	);
 };
 

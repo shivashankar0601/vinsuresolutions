@@ -67,7 +67,7 @@ const ProfileMenu = () => {
 					/>
 				</Button>
 			</MenuHandler>
-			<MenuList className="p-1">
+			<MenuList className="p-1 focus:outline-none border-0">
 				{profileMenuItems.map(({ label, icon }, key) => {
 					const isLastItem = key === profileMenuItems.length - 1;
 					return (
@@ -75,7 +75,9 @@ const ProfileMenu = () => {
 							key={label}
 							onClick={closeMenu}
 							className={`flex items-center gap-2 rounded ${
-								isLastItem ? "hover:bg-red-500/10" : ""
+								isLastItem
+									? "hover:bg-red-500/10"
+									: "hover:bg-gray-500/10"
 							}`}
 						>
 							{React.createElement(icon, {
