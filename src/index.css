@@ -1,11 +1,36 @@
 @import "tailwindcss";
 
+/* --primary: #4d63da; */
+/* --primary-dark: #3a4bb1; */
+/* Actual blue green*/
+/* :root {
+	--primary: #0a5066;
+	--primary-dark: #1390b6;
+} */
+
+/* Blue theme */
 :root {
-	/* --primary: #4d63da; */
-	/* --primary-dark: #3a4bb1; */
-	--primary: #1390b6;
-	--primary-dark: #0a5066;
+	--primary: #1e3a8a;
+	--primary-dark: #4f9eea;
 }
+
+/* Indigo theme */
+/* :root {
+	--primary: #758bf5;
+	--primary-dark: #4338ca;
+} */
+
+/* Orange theme */
+/* :root {
+	--primary: #c3064e;
+	--primary-dark: #e26533;
+} */
+
+/* Teal theme */
+/* :root {
+	--primary: #0f766e;
+	--primary-dark: #5eead4;
+} */
 
 body {
 	/* background-color: #b4bcf388; */
@@ -146,7 +171,6 @@ a:visited {
 }
 
 .vs-nav-label {
-	/* color: #ffffff; */
 	font-weight: 600;
 }
 

@@ -63,7 +63,7 @@ const Home = () => {
 						<Typography
 							variant="h1"
 							color="blue-gray"
-							className="mx-auto my-6 w-full leading-snug  !text-2xl lg:max-w-3xl lg:!text-5xl"
+							className="mx-auto my-6 w-full leading-snug !text-2xl lg:max-w-3xl lg:!text-5xl text-gray-600"
 						>
 							Get ready to experience a new era of{" "}
 							<span className="text-primary leading-snug ">

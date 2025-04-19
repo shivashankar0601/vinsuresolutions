@@ -130,6 +130,8 @@ const navListMenuItems = [
 	},
 ];
 
+const iconHeight = "h-[24px] w-[24px]";
+
 const NavListMenu = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -161,11 +163,11 @@ const NavListMenu = () => {
 						className="font-normal"
 					>
 						<MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
-							<Square3Stack3DIcon className="h-[18px] w-[18px]" />
-							<span className="font-bold">Training</span>
+							<Square3Stack3DIcon className={iconHeight} />
+							<span className="font-bold text-lg">Training</span>
 							<ChevronDownIcon
 								strokeWidth={2}
-								className={`h-3 w-3 transition-transform ${
+								className={`h-4 w-4 mt-[5px] transition-transform ${
 									isMenuOpen ? "rotate-180" : ""
 								}`}
 							/>
@@ -203,7 +205,7 @@ const NavListMenu = () => {
 			</Menu>
 
 			<MenuItem className="flex items-center gap-2 font-medium text-blue-gray-900 lg:hidden">
-				<Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />
+				<Square3Stack3DIcon className={iconHeight} />
 				Pages
 			</MenuItem>
 
@@ -217,6 +219,7 @@ const NavListMenu = () => {
 const navListItems = [
 	{ label: "Payroll", icon: BanknotesIcon },
 	{ label: "Recruitment", icon: UserGroupIcon },
+	{ label: "Training", icon: Square3Stack3DIcon },
 	{ label: "BPO & KPO", icon: GlobeAltIcon },
 	{ label: "About Us", icon: InformationCircleIcon },
 ];
@@ -236,7 +239,7 @@ const NavList = () => (
 					{React.createElement(icon, {
 						className: "h-[24px] w-[24px]",
 					})}
-					<span className="vs-nav-label">{label}</span>
+					<span className="font-bold text-lg">{label}</span>
 				</MenuItem>
 			</Typography>
 		))}
@@ -250,18 +253,19 @@ const Header = () => {
 	useEffect(() => {
 		const resizeHandler = () => {
 			if (window.innerWidth >= 960) setIsNavOpen(false);
+			console.log(window.innerWidth);
 		};
 		window.addEventListener("resize", resizeHandler);
 		return () => window.removeEventListener("resize", resizeHandler);
 	}, []);
 
 	return (
-		<Navbar className="vs-nav border-0 border-radius-none py-1 rounded-none">
+		<Navbar className="vs-nav border-0 border-radius-none py-4 rounded-none">
 			<div className="relative mx-auto flex items-center justify-between container">
 				<Typography
 					as="a"
 					href="#"
-					className="text-2xl mx-4 cursor-pointer py-1.5 font-bold hover:!no-underline"
+					className="text-3xl mx-4 cursor-pointer py-1.5 font-bold hover:!no-underline"
 				>
 					Vinsure Solutions
 				</Typography>
@@ -273,10 +277,10 @@ const Header = () => {
 				{window.innerWidth < 640 && (
 					<IconButton
 						size="sm"
-						color="blue-gray"
+						color="white"
 						variant="text"
 						onClick={toggleIsNavOpen}
-						className="ml-auto mr-2 lg:hidden"
+						className="l-0 ml-auto mr-2 lg:hidden bg-primary"
 					>
 						<Bars2Icon className="h-6 w-6" />
 					</IconButton>
