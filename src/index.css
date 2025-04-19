@@ -130,7 +130,7 @@ a:disabled {
 }
 
 .vs-footer {
-	background-color: var(--primary-dark);
+	background-color: var(--primary);
 	color: #ffffff;
 	& a {
 		color: #ffffff;

@@ -11,6 +11,7 @@ import {
 	Avatar,
 	IconButton,
 	Collapse,
+	Card,
 } from "@material-tailwind/react";
 
 import {
@@ -26,6 +27,7 @@ import {
 	GlobeAltIcon,
 	InformationCircleIcon,
 	BriefcaseIcon,
+	ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 
 const profileMenuItems = [
@@ -39,28 +41,55 @@ const profileMenuItems = [
 const navListMenuItems = [
 	{
 		title: "Java",
-		description:
-			"Java is a high-level, class-based, object-oriented programming language.",
+		subMenu: [
+			{
+				title: "Java Basics",
+				description:
+					"Java is a high-level, class-based, object-oriented programming language.",
+			},
+		],
 	},
 	{
 		title: "Salesforce Admin",
-		description:
-			"Salesforce Admin is a cloud-based software platform for customer relationship management.",
+		subMenu: [
+			{
+				title: "Salesforce Basics",
+				description:
+					"Salesforce Admin is a cloud-based software platform for customer relationship management.",
+			},
+		],
 	},
 	{
 		title: "Business Systems Analyst",
-		description:
-			"Business Systems Analyst is a professional who analyzes and designs information systems.",
+		subMenu: [
+			{
+				title: "Business Systems Analyst Basics",
+
+				description:
+					"Business Systems Analyst is a professional who analyzes and designs information systems.",
+			},
+		],
 	},
 	{
 		title: "Quality Analyst",
-		description:
-			"Quality Analyst is a professional who ensures that products meet quality standards.",
+		subMenu: [
+			{
+				title: "Quality Analyst Basics",
+
+				description:
+					"Quality Analyst is a professional who ensures that products meet quality standards.",
+			},
+		],
 	},
 	{
 		title: "Project Management",
-		description:
-			"Project Management is the process of planning, executing, and closing projects.",
+		subMenu: [
+			{
+				title: "Project Management Basics",
+				description:
+					"Project Management is the process of planning, executing, and closing projects.",
+			},
+		],
 	},
 ];
 
@@ -138,6 +167,93 @@ const ProfileMenu = () => {
 
 const NavListMenu = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+	return (
+		<Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
+			<MenuHandler>
+				<Typography
+					as="a"
+					href="#"
+					variant="small"
+					className="font-normal"
+				>
+					<MenuItem className="hidden items-center gap-2 font-medium  lg:flex lg:rounded-full">
+						<Square3Stack3DIcon className={iconHeight} />
+						<span className="text-lg">Training</span>
+						<ChevronDownIcon
+							strokeWidth={2}
+							className={`h-4 w-4 mt-[5px] transition-transform ${
+								isMenuOpen ? "rotate-180" : ""
+							}`}
+						/>
+					</MenuItem>
+				</Typography>
+			</MenuHandler>
+
+			{/* MenuList must be relatively positioned container */}
+			<MenuList className="p-1 focus:outline-none border-0 relative z-10">
+				{navListMenuItems.map(({ title, subMenu }) => (
+					<div
+						key={title}
+						className="relative group"
+						onMouseEnter={() => setActiveSubmenu(title)}
+						onMouseLeave={() => setActiveSubmenu(null)}
+					>
+						<MenuItem className="flex items-center gap-2 rounded hover:bg-gray-100">
+							<Typography
+								as="span"
+								variant="small"
+								className="font-normal"
+								color="inherit"
+							>
+								{title}
+							</Typography>
+						</MenuItem>
+
+						{subMenu && (
+							<Card
+								className={
+									"absolute top-0 left-full ml-2 w-64 h-full shadow-lg bg-white flex flex-col justify-center p-4 z-20 " +
+									`${activeSubmenu === title ? "" : ""}`
+								}
+							>
+								<ul className="flex flex-col gap-4">
+									{subMenu.map((item) => (
+										<li key={item.title}>
+											<Typography
+												variant="small"
+												className="font-medium text-gray-900"
+											>
+												{item.title}
+											</Typography>
+											<Typography
+												variant="small"
+												className="text-gray-600 text-sm"
+											>
+												{item.description}
+											</Typography>
+										</li>
+									))}
+								</ul>
+							</Card>
+						)}
+					</div>
+				))}
+			</MenuList>
+		</Menu>
+	);
+
+	{
+		/* <MenuItem className="flex items-center gap-2 font-medium  lg:hidden">
+		<Square3Stack3DIcon className={iconHeight} />
+		Pages
+	</MenuItem>
+
+	<ul className="bg-white ml-6 flex flex-col gap-1 lg:hidden rounded-md no-border">
+		{renderItems}
+	</ul> */
+	}
 
 	const renderItems = navListMenuItems.map(({ title, description }) => (
 		<a href="#" key={title}>
@@ -155,86 +271,14 @@ const NavListMenu = () => {
 			</MenuItem>
 		</a>
 	));
-
-	return (
-		<>
-			<Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
-				<MenuHandler>
-					<Typography
-						as="a"
-						href="#"
-						variant="small"
-						className="font-normal"
-					>
-						<MenuItem className="hidden items-center gap-2 font-medium  lg:flex lg:rounded-full">
-							<Square3Stack3DIcon className={iconHeight} />
-							<span className="text-lg">Training</span>
-							<ChevronDownIcon
-								strokeWidth={2}
-								className={`h-4 w-4 mt-[5px] transition-transform ${
-									isMenuOpen ? "rotate-180" : ""
-								}`}
-							/>
-						</MenuItem>
-					</Typography>
-				</MenuHandler>
-				{/* <MenuList className="hidden grid-cols-1 overflow-visible lg:grid border-0 rounded-lg shadow-lg bg-white p-2">
-					<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 hover:!border-0">
-						{navListMenuItems.map(({ title, description }) => (
-							<li key={title} className="relative group">
-								<a
-									href="#"
-									className="flex items-center gap-3 hover:bg-gray-100 transition-all p-1 rounded-lg"
-								>
-									<span className="font-medium text-primary text-lg">
-										{title}
-									</span>
-								</a>
-
-								<div className="absolute z-10 hidden group-hover:block bg-white text-sm text-primary shadow-md rounded p-3 w-64 -bottom-24 left-0">
-									{description}
-								</div>
-							</li>
-						))}
-					</ul>
-				</MenuList> */}
-
-				<MenuList className="p-1 focus:outline-none border-0">
-					{navListMenuItems.map(({ title, description }) => (
-						<MenuItem
-							key={title}
-							className={`flex items-center gap-2 rounded hover:bg-gray-100`}
-						>
-							<Typography
-								as="span"
-								variant="small"
-								className="font-normal"
-								color="inherit"
-							>
-								{title}
-							</Typography>
-						</MenuItem>
-					))}
-				</MenuList>
-			</Menu>
-
-			<MenuItem className="flex items-center gap-2 font-medium  lg:hidden">
-				<Square3Stack3DIcon className={iconHeight} />
-				Pages
-			</MenuItem>
-
-			<ul className="bg-white ml-6 flex flex-col gap-1 lg:hidden rounded-md no-border">
-				{renderItems}
-			</ul>
-		</>
-	);
 };
 
 const NavList = () => (
 	<ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
 		{navListItems.map(({ label, icon }) =>
 			label === "Training" ? (
-				<NavListMenu />
+				// <NavListMenu key={label} />
+				<NestedMenu key={label} />
 			) : (
 				<Typography
 					key={label}
@@ -255,6 +299,98 @@ const NavList = () => (
 	</ul>
 );
 
+const SubMenuCard = () => {
+	return (
+		<Card className="p-4 shadow-lg w-80">
+			<Typography variant="h6" className="mb-2 text-primary">
+				What We Offer
+			</Typography>
+			<ul className="space-y-2">
+				<li>
+					<Typography variant="small" className="font-medium">
+						Training Services
+					</Typography>
+					<Typography variant="small" color="gray">
+						Upskill with our tailored training programs.
+					</Typography>
+				</li>
+				<li>
+					<Typography variant="small" className="font-medium">
+						Payroll Management
+					</Typography>
+					<Typography variant="small" color="gray">
+						Simplify your employee compensation process.
+					</Typography>
+				</li>
+				<li>
+					<Typography variant="small" className="font-medium">
+						Recruitment Solutions
+					</Typography>
+					<Typography variant="small" color="gray">
+						Find top talent for any role, fast.
+					</Typography>
+				</li>
+			</ul>
+		</Card>
+	);
+};
+
+// ✅ Main Menu Component
+const NestedMenu = () => {
+	const [openMenu, setOpenMenu] = React.useState(false);
+	const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+	return (
+		<Menu allowHover open={openMenu} handler={setOpenMenu}>
+			<MenuHandler>
+				<Typography
+					as="a"
+					href="#"
+					variant="small"
+					className="font-normal"
+				>
+					<MenuItem className="hidden items-center gap-2 font-medium  lg:flex lg:rounded-full">
+						<Square3Stack3DIcon className={iconHeight} />
+						<span className="text-lg">Training</span>
+						<ChevronDownIcon
+							strokeWidth={2}
+							className={`h-4 w-4 mt-[5px] transition-transform ${
+								openMenu ? "rotate-180" : ""
+							}`}
+						/>
+					</MenuItem>
+				</Typography>
+			</MenuHandler>
+
+			<MenuList className="relative">
+				<MenuItem>Menu Item 1</MenuItem>
+				<MenuItem>Menu Item 2</MenuItem>
+
+				{/* Nested Submenu */}
+				<Menu
+					placement="right-start"
+					open={activeSubmenu}
+					handler={setActiveSubmenu}
+					allowHover
+					offset={15}
+				>
+					<MenuHandler className="flex items-center justify-between">
+						<MenuItem className="flex items-center justify-between w-full">
+							Services Overview
+						</MenuItem>
+					</MenuHandler>
+
+					<MenuList className="p-0 overflow-visible shadow-none">
+						<SubMenuCard />
+					</MenuList>
+				</Menu>
+
+				<MenuItem>Menu Item 3</MenuItem>
+			</MenuList>
+		</Menu>
+	);
+};
+
 const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
@@ -262,19 +398,18 @@ const Header = () => {
 	useEffect(() => {
 		const resizeHandler = () => {
 			if (window.innerWidth >= 960) setIsNavOpen(false);
-			console.log(window.innerWidth);
 		};
 		window.addEventListener("resize", resizeHandler);
 		return () => window.removeEventListener("resize", resizeHandler);
 	}, []);
 
 	return (
-		<Navbar className="vs-nav bg-primary text-white border-0 border-radius-none py-4 rounded-none">
+		<Navbar className="vs-nav bg-primary text-white border-0 border-radius-none py-8 rounded-none">
 			<div className="relative mx-auto flex items-center justify-between container">
 				<Typography
 					as="a"
 					href="#"
-					className="text-3xl mx-4 cursor-pointer py-1.5 font-bold hover:!no-underline"
+					className="text-4xl mx-4 cursor-pointer py-1.5 font-bold hover:!no-underline"
 				>
 					Vinsure Solutions
 				</Typography>
@@ -299,7 +434,7 @@ const Header = () => {
 				<Button
 					variant="text"
 					color="white"
-					className="rounded-full bg-white text-primary btn-primary"
+					className="rounded-full bg-white text-primary btn-primary hover:shadow-md"
 				>
 					Login
 				</Button>

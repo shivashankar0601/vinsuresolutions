@@ -1,22 +1,6 @@
 import React from "react";
 import "./Home.css";
-import {
-	Navbar,
-	Collapse,
-	Button,
-	IconButton,
-	Typography,
-	Input,
-} from "@material-tailwind/react";
-import {
-	RectangleStackIcon,
-	UserCircleIcon,
-	CommandLineIcon,
-	Squares2X2Icon,
-} from "@heroicons/react/24/solid";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import circles from "@assets/background.svg";
-import ContactDrawer from "@components/contact-drawer/ContactDrawer";
+import { Typography } from "@material-tailwind/react";
 import ContactBadge from "@components/contact-drawer/ContactBadge";
 import Search from "@components/search/Search";
 import WhyChooseUs from "@components/why-choose-us/WhyChooseUs";
@@ -51,12 +35,10 @@ const Home = () => {
 		);
 	}, []);
 
-	console.log(circles);
-
 	return (
 		<div className="space-y-10 my-10">
 			<Toaster position="top-right" />
-			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
+			<section className="min-h-[300px] p-10 odd:bg-primary odd:bg-opacity-20 even:bg-white odd:shadow-md rounded">
 				{/* <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-[url('/assets/background.svg')] bg-center bg-contain bg-no-repeat"> */}
 				<div className="grid mt-16">
 					<div className="container mx-auto px-4 text-center">
