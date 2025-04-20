@@ -129,8 +129,8 @@ const Header = () => {
 			<div className="relative mx-auto flex items-center justify-between container">
 				<Typography
 					as="a"
-					href="#"
-					className="text-4xl mx-4 cursor-pointer py-1.5 hover:!no-underline !font-bold"
+					href="./"
+					className="text-4xl mx-4 cursor-pointer py-1.5 hover:!no-underline !font-bold !text-white"
 				>
 					Vinsure Solutions
 				</Typography>
