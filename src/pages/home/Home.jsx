@@ -1,22 +1,6 @@
 import React from "react";
 import "./Home.css";
-import {
-	Navbar,
-	Collapse,
-	Button,
-	IconButton,
-	Typography,
-	Input,
-} from "@material-tailwind/react";
-import {
-	RectangleStackIcon,
-	UserCircleIcon,
-	CommandLineIcon,
-	Squares2X2Icon,
-} from "@heroicons/react/24/solid";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import circles from "@assets/background.svg";
-import ContactDrawer from "@components/contact-drawer/ContactDrawer";
+import { Typography } from "@material-tailwind/react";
 import ContactBadge from "@components/contact-drawer/ContactBadge";
 import Search from "@components/search/Search";
 import WhyChooseUs from "@components/why-choose-us/WhyChooseUs";
@@ -51,26 +35,24 @@ const Home = () => {
 		);
 	}, []);
 
-	console.log(circles);
-
 	return (
 		<div className="space-y-10 my-10">
 			<Toaster position="top-right" />
-			<section className="min-h-[300px] p-10 odd:bg-gray-50 even:bg-white odd:shadow-md rounded">
+			<section className="min-h-[300px] p-10 odd:bg-primary odd:bg-opacity-20 even:bg-white odd:shadow-md rounded">
 				{/* <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-[url('/assets/background.svg')] bg-center bg-contain bg-no-repeat"> */}
 				<div className="grid mt-16">
 					<div className="container mx-auto px-4 text-center">
 						<Typography
 							variant="h1"
 							color="blue-gray"
-							className="mx-auto my-6 w-full leading-snug  !text-2xl lg:max-w-3xl lg:!text-5xl"
+							className="mx-auto my-6 w-full leading-snug !text-2xl lg:max-w-3xl lg:!text-5xl text-gray-600"
 						>
 							Get ready to experience a new era of{" "}
-							<span className="text-primary-lite leading-snug ">
+							<span className="text-primary leading-snug ">
 								talent acquisition
 							</span>{" "}
 							and{" "}
-							<span className="text-primary-lite leading-snug">
+							<span className="text-primary leading-snug">
 								staffing excellence
 							</span>
 							.
@@ -105,7 +87,7 @@ const Home = () => {
 					</Typography>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 						<div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-							<RectangleStackIcon className="h-12 w-12 mb-4 text-primary-lite" />
+							<RectangleStackIcon className="h-12 w-12 mb-4 text-primary-dark" />
 							<Typography
 								variant="h5"
 								className="mb-2 text-gray-800"
@@ -121,7 +103,7 @@ const Home = () => {
 							</Typography>
 						</div>
 						<div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-							<UserCircleIcon className="h-12 w-12 mb-4 text-primary-lite" />
+							<UserCircleIcon className="h-12 w-12 mb-4 text-primary-dark" />
 							<Typography
 								variant="h5"
 								className="mb-2 text-gray-800"
@@ -137,7 +119,7 @@ const Home = () => {
 							</Typography>
 						</div>
 						<div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md">
-							<CommandLineIcon className="h-12 w-12 mb-4 text-primary-lite" />
+							<CommandLineIcon className="h-12 w-12 mb-4 text-primary-dark" />
 							<Typography
 								variant="h5"
 								className="mb-2 text-gray-800"
@@ -169,7 +151,7 @@ const Home = () => {
 					<Button
 						color="primary"
 						size="lg"
-						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+						className="rounded-full px-8 py-3 bg-primary-dark font-semibold"
 					>
 						View Openings
 					</Button>
@@ -189,7 +171,7 @@ const Home = () => {
 					<Button
 						color="primary"
 						size="lg"
-						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+						className="rounded-full px-8 py-3 bg-primary-dark font-semibold"
 					>
 						Get in Touch
 					</Button>
@@ -209,7 +191,7 @@ const Home = () => {
 					<Button
 						color="primary"
 						size="lg"
-						className="rounded-full px-8 py-3 bg-primary-lite font-semibold"
+						className="rounded-full px-8 py-3 bg-primary-dark font-semibold"
 					>
 						Follow Us
 					</Button>

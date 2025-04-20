@@ -13,7 +13,7 @@ const ContactBadge = () => {
 				<Button
 					onClick={toggleDrawer}
 					color="blue"
-					className="rounded-full p-3 shadow-xl bg-primary-lite text-white flex items-center gap-2"
+					className="rounded-full p-3 shadow-xl bg-primary text-white flex items-center gap-2"
 				>
 					<EnvelopeIcon className="h-5 w-5" />
 					<span className="hidden md:inline-block">Contact Us</span>

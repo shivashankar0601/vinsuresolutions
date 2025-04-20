@@ -1,127 +1,3 @@
-// import React, { useState } from "react";
-// import {
-// 	Button,
-// 	Input,
-// 	Textarea,
-// 	Typography,
-// 	IconButton,
-// 	Card,
-// } from "@material-tailwind/react";
-// import { XMarkIcon } from "@heroicons/react/24/solid";
-// import { ChatBubbleBottomCenterTextIcon } from "@heroicons/react/24/solid";
-
-// const ContactDrawer = () => {
-// 	const [open, setOpen] = useState(false);
-
-// 	const toggleDrawer = () => setOpen((prev) => !prev);
-
-// 	return (
-// 		<>
-// 			{/* Contact Us Badge */}
-// 			{/* <div className="fixed right-4 top-1/2 z-50">
-// 				<Button
-// 					onClick={toggleDrawer}
-// 					size="sm"
-// 					color="blue"
-// 					className="rounded-full shadow-lg bg-primary-lite text-white"
-// 				>
-// 					Contact Us
-// 				</Button>
-// 			</div> */}
-
-// 			<div className="fixed right-4 z-50 transform -translate-y-1/2">
-// 				<Button
-// 					onClick={toggleDrawer}
-// 					// className="flex flex-col items-center gap-1 px-3 py-2 rounded-full shadow-xl bg-primary-lite text-white hover:scale-105 transition-transform"
-// 					className="flex flex-col items-center gap-1 px-3 py-2 rounded-full shadow-xl bg-primary-lite text-white flex flex-row gap-2"
-// 				>
-// 					<ChatBubbleBottomCenterTextIcon className="h-4 w-4" />
-// 					<span className="text-xs font-bold">Contact US</span>
-// 				</Button>
-// 			</div>
-
-// 			{/* Drawer */}
-// 			<div
-// 				className={`fixed top-0 right-0 h-full w-full max-w-md z-50 transition-transform duration-500 ease-in-out transform ${
-// 					open ? "translate-x-0" : "translate-x-full"
-// 				} bg-white shadow-xl border-l border-gray-200`}
-// 			>
-// 				{/* Header */}
-// 				<div className="flex items-center justify-between p-4 border-b bg-gray-50">
-// 					<Typography variant="h5" color="blue-gray">
-// 						Get in Touch
-// 					</Typography>
-// 					<IconButton variant="text" onClick={toggleDrawer}>
-// 						<XMarkIcon className="h-6 w-6 text-gray-600" />
-// 					</IconButton>
-// 				</div>
-
-// 				{/* Form */}
-// 				<Card className="p-6 shadow-none bg-white h-full overflow-auto">
-// 					<form className="flex flex-col gap-6">
-// 						<div>
-// 							<Typography
-// 								variant="small"
-// 								color="gray"
-// 								className="mb-1 font-medium"
-// 							>
-// 								Name
-// 							</Typography>
-// 							<Input
-// 								label="Your Name"
-// 								required
-// 								className="focus:border-primary"
-// 							/>
-// 						</div>
-
-// 						<div>
-// 							<Typography
-// 								variant="small"
-// 								color="gray"
-// 								className="mb-1 font-medium"
-// 							>
-// 								Email
-// 							</Typography>
-// 							<Input
-// 								label="Your Email"
-// 								type="email"
-// 								required
-// 								className="focus:border-primary"
-// 							/>
-// 						</div>
-
-// 						<div>
-// 							<Typography
-// 								variant="small"
-// 								color="gray"
-// 								className="mb-1 font-medium"
-// 							>
-// 								Message
-// 							</Typography>
-// 							<Textarea
-// 								label="Your Message"
-// 								rows={4}
-// 								required
-// 								className="focus:border-primary"
-// 							/>
-// 						</div>
-
-// 						<Button
-// 							color="blue"
-// 							type="submit"
-// 							className="mt-4 bg-primary hover:bg-primary-dark transition-all duration-300"
-// 						>
-// 							Send Message
-// 						</Button>
-// 					</form>
-// 				</Card>
-// 			</div>
-// 		</>
-// 	);
-// };
-
-// export default ContactDrawer;
-
 import React, { useState } from "react";
 import {
 	Button,
@@ -130,6 +6,7 @@ import {
 	Textarea,
 	Typography,
 	IconButton,
+	Switch,
 } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { toast } from "react-hot-toast";
@@ -139,6 +16,8 @@ const ContactDrawer = ({ open, toggleDrawer }) => {
 		name: "",
 		email: "",
 		message: "",
+		whatsapp: false,
+		tnc: false,
 	});
 	const [loading, setLoading] = useState(false);
 
@@ -164,7 +43,7 @@ const ContactDrawer = ({ open, toggleDrawer }) => {
 			{/* Backdrop */}
 			{open && (
 				<div
-					className="fixed inset-0 bg-black bg-opacity-30 z-40"
+					className="fixed inset-0 bg-black opacity-30 z-40"
 					onClick={toggleDrawer}
 				/>
 			)}
@@ -176,7 +55,10 @@ const ContactDrawer = ({ open, toggleDrawer }) => {
 			>
 				{/* Header */}
 				<div className="flex items-center justify-between p-4 border-b bg-gray-50">
-					<Typography variant="h5" color="blue-gray">
+					<Typography
+						variant="h5"
+						className="text-primary text-2xl font-semibold"
+					>
 						Get in Touch
 					</Typography>
 					<IconButton variant="text" onClick={toggleDrawer}>
@@ -190,41 +72,87 @@ const ContactDrawer = ({ open, toggleDrawer }) => {
 						onSubmit={handleSubmit}
 						className="flex flex-col gap-6"
 					>
-						<div>
+						<div className="mb-4">
 							<Input
 								label="Your Name"
+								placeholder="John Doe"
 								name="name"
 								value={form.name}
 								onChange={handleChange}
 								required
 								crossOrigin=""
-								color="blue"
+								className="border-1 border-gray-50 outline-gray-200 focus:ring-0 shadow-md rounded-lg"
 							/>
 						</div>
-						<div>
+						<div className="mb-4">
 							<Input
 								label="Your Email"
+								placeholder="john.doe@lnsols.com"
 								name="email"
 								type="email"
 								value={form.email}
 								onChange={handleChange}
 								required
 								crossOrigin=""
-								color="blue"
+								className="border-1 border-gray-50 outline-gray-200 focus:ring-0 shadow-md rounded-lg "
 							/>
 						</div>
-						<div>
+						<div className="mb-4">
 							<Textarea
 								label="Your Message"
+								placeholder="Type your message here..."
 								name="message"
 								value={form.message}
 								onChange={handleChange}
 								required
 								rows={4}
-								color="blue"
+								className="border-1 border-gray-50 outline-gray-200 focus:ring-0 shadow-md rounded-lg"
 							/>
 						</div>
-
+						<div className="mt-10">
+							<input
+								type="checkbox"
+								value={form.whatsapp}
+								onChange={handleChange}
+								id="whatsapp"
+								className="mr-2 cursor-pointer"
+								name="whatsapp"
+								defaultChecked
+							/>
+							<label
+								htmlFor="whatsapp"
+								className="text-sm text-gray-700 cursor-pointer"
+							>
+								I agree to be contacted via{" "}
+								<span className="font-medium text-green-600">
+									WhatsApp
+								</span>
+								.
+							</label>
+						</div>
+						<div className="mb-4">
+							<input
+								type="checkbox"
+								value={form.tnc}
+								onChange={handleChange}
+								id="tnc"
+								className="mr-2 cursor-pointer"
+								name="tnc"
+								defaultChecked
+								required
+							/>
+							<label
+								htmlFor="tnc"
+								className="text-sm cursor-pointer"
+							>
+								I agree to be contacted by VinsureSolutions
+								regarding this submission and accept the{" "}
+								<a href="#" className="text-primary underline">
+									terms & conditions
+								</a>
+								.
+							</label>
+						</div>
 						<Button
 							type="submit"
 							disabled={loading}

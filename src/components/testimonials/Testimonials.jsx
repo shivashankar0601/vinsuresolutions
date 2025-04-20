@@ -78,7 +78,7 @@ const Testimonials = () => {
 							<SwiperSlide key={index}>
 								<Card className="bg-gray-50 shadow-md hover:shadow-lg hover:bg-gray-100 transition-shadow h-full mx-2 cursor-pointer my-2">
 									<CardBody className="flex flex-col items-center text-center p-6 h-full">
-										<ChatBubbleBottomCenterTextIcon className="h-10 w-10 text-primary-lite mb-4" />
+										<ChatBubbleBottomCenterTextIcon className="h-10 w-10 text-primary mb-4" />
 										<Typography
 											variant="h6"
 											className="text-gray-800"
@@ -94,7 +94,7 @@ const Testimonials = () => {
 										<Rating
 											value={rating}
 											readonly
-											className="text-primary-lite mb-4 flex flex-row"
+											className="text-primary mb-4 flex flex-row"
 										/>
 										<Typography className="text-gray-700 text-sm italic">
 											“{feedback}”

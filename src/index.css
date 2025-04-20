@@ -1,11 +1,36 @@
 @import "tailwindcss";
 
-:root {
-	/* --primary: #4d63da; */
-	/* --primary-lite: #3a4bb1; */
+/* --primary: #4d63da; */
+/* --primary-dark: #3a4bb1; */
+/* Actual blue green*/
+/* :root {
 	--primary: #0a5066;
-	--primary-lite: #1390b6;
+	--primary-dark: #1390b6;
+} */
+
+/* Blue theme */
+:root {
+	--primary: #1e3a8a;
+	--primary-dark: #4f9eea;
 }
+
+/* Indigo theme */
+/* :root {
+	--primary: #758bf5;
+	--primary-dark: #4338ca;
+} */
+
+/* Orange theme */
+/* :root {
+	--primary: #c3064e;
+	--primary-dark: #e26533;
+} */
+
+/* Teal theme */
+/* :root {
+	--primary: #0f766e;
+	--primary-dark: #5eead4;
+} */
 
 body {
 	/* background-color: #b4bcf388; */
@@ -37,12 +62,12 @@ button {
 }
 
 .button-primary:hover {
-	background-color: var(--primary-lite); /* Darker shade on hover */
+	background-color: var(--primary-dark); /* Darker shade on hover */
 	box-shadow: 0 4px 8px rgba(77, 99, 218, 0.3); /* Subtle shadow effect */
 }
 
 .button-primary:active {
-	background-color: var(--primary-lite); /* Keep same color as hover */
+	background-color: var(--primary-dark); /* Keep same color as hover */
 	transform: scale(0.98); /* Shrink effect on click */
 }
 
@@ -60,11 +85,11 @@ button {
 .button-secondary:hover {
 	background-color: var(--primary); /* Blue background on hover */
 	color: white; /* Change text to white */
-	border-color: var(--primary-lite); /* Darker border color on hover */
+	border-color: var(--primary-dark); /* Darker border color on hover */
 }
 
 .button-secondary:active {
-	background-color: var(--primary-lite); /* Keep same color as hover */
+	background-color: var(--primary-dark); /* Keep same color as hover */
 	color: white; /* Text remains white on click */
 	transform: scale(0.98); /* Shrink effect */
 }
@@ -82,12 +107,12 @@ button {
 }
 
 .button-tertiary:hover {
-	color: var(--primary-lite); /* Darker blue on hover */
+	color: var(--primary-dark); /* Darker blue on hover */
 	text-decoration: none; /* Remove underline on hover */
 }
 
 .button-tertiary:active {
-	color: var(--primary-lite); /* Same as hover */
+	color: var(--primary-dark); /* Same as hover */
 	transform: scale(0.98); /* Shrink effect */
 }
 
@@ -104,56 +129,6 @@ a:disabled {
 	pointer-events: none; /* Disable any interaction */
 }
 
-/* Links: Same styling as Tertiary Button, but with smoother transition effects */
-a {
-	color: var(--primary); /* Link color */
-	text-decoration: none; /* Remove default underline */
-	transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
-}
-
-a:hover {
-	color: var(--primary-lite); /* Darker blue on hover */
-	text-decoration: underline; /* Add underline on hover */
-}
-
-a:active {
-	color: var(--primary-lite); /* Same as hover */
-	transform: scale(0.98); /* Shrink effect on click */
-	background: none; /* No background on click */
-	box-shadow: none; /* No shadow on click */
-}
-
-a:focus {
-	outline: none;
-	/*box-shadow: 0 0 5px rgba(77, 99, 218, 0.6); /* Focus glow effect */
-}
-
-/* Optional: Adding smoother text decoration transition for links */
-a,
-a:hover {
-	transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
-}
-
-/* Links that are visited (optional) */
-a:visited {
-	color: var(--primary); /* Keep visited links in the same blue */
-}
-
-/* Navbar Styles */
-.vs-nav {
-	/* background-color: #b4bcf3; */
-	color: #ffffff;
-}
-
-.vs-nav-label {
-	/* color: #ffffff; */
-	font-weight: 600;
-}
-
-.vs-nav-logo {
-	font-weight: 700;
-}
-
 .vs-footer {
 	background-color: var(--primary);
 	color: #ffffff;
@@ -166,23 +141,23 @@ a:visited {
 	color: var(--primary);
 }
 
-.text-primary-lite {
-	color: var(--primary-lite);
+.text-primary-dark {
+	color: var(--primary-dark);
 }
 
 .bg-primary {
 	background-color: var(--primary);
 }
 
-.bg-primary-lite {
-	background-color: var(--primary-lite);
+.bg-primary-dark {
+	background-color: var(--primary-dark);
 }
 
-.border-primary-lite {
+.border-primary {
 	border-color: #ffffff;
 	border-width: 2px;
 }
 
-.border-primary-lite:hover {
-	border-color: var(--primary-lite);
+.border-primary:hover {
+	border-color: var(--primary);
 }

@@ -60,7 +60,7 @@ const WhyChooseUs = () => {
 						<Card
 							key={title}
 							shadow={false}
-							className="p-6 text-left bg-white hover:bg-gray-100 border-primary-lite transition-all rounded-xl cursor-pointer"
+							className="p-6 text-left bg-white hover:bg-gray-100 border-primary transition-all rounded-xl cursor-pointer"
 						>
 							<div className="mb-4">{icon}</div>
 							<Typography

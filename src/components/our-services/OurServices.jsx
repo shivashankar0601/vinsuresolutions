@@ -49,12 +49,24 @@ const OurServices = () => {
 	return (
 		<section className="py-16">
 			<div className="container mx-auto px-6">
-				<Typography
-					variant="h2"
-					className="text-center mb-10 text-gray-800"
-				>
-					Our Services
-				</Typography>
+				<div className="relative flex flex-col items-center justify-center">
+					<div className="max-w-2xl w-full text-center mb-8">
+						<Typography
+							variant="h2"
+							className="text-gray-800 font-semibold"
+						>
+							Our Services
+						</Typography>
+						<Typography
+							variant="paragraph"
+							className="text-gray-600 mt-2 mb-2"
+						>
+							Discover professional solutions tailored to elevate
+							your business and empower your workforce.
+						</Typography>
+					</div>
+				</div>
+
 				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
 					{services.map(({ title, description, icon }) => (
 						<Card
