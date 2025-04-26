@@ -155,7 +155,7 @@ const Header = () => {
 				<Button
 					variant="text"
 					color="white"
-					className="rounded-full bg-white text-primary btn-primary hover:shadow-md"
+					className="rounded-full bg-white text-primary btn-primary hover:shadow-md hover:!bg-gray-500 hover:!opacity-50 !cursor-not-allowed"
 				>
 					Login
 				</Button>

@@ -6,8 +6,6 @@ import Search from "@components/search/Search";
 import WhyChooseUs from "@components/why-choose-us/WhyChooseUs";
 import OurServices from "@components/our-services/OurServices";
 import Testimonials from "@components/testimonials/Testimonials";
-import { Toaster } from "react-hot-toast";
-
 function NavItem({ children }) {
 	return (
 		<li>
@@ -37,7 +35,6 @@ const Home = () => {
 
 	return (
 		<div className="space-y-10 my-10">
-			<Toaster position="top-right" />
 			<section className="min-h-[300px] p-10 odd:bg-primary odd:bg-opacity-20 even:bg-white odd:shadow-md rounded">
 				{/* <div className="grid mt-16 min-h-[82vh] w-full lg:h-[54rem] md:h-[34rem] place-items-stretch bg-[url('/assets/background.svg')] bg-center bg-contain bg-no-repeat"> */}
 				<div className="grid mt-16">

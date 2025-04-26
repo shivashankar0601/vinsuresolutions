@@ -6,11 +6,13 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import JobSearch from "./pages/job-search/JobSearch";
 import Home from "./pages/home/Home";
+import { Toaster } from "react-hot-toast";
 function App() {
 	return (
 		<>
 			<Router>
 				<Header />
+				<Toaster position="top-right" />
 				<div className="container mx-auto px-4">
 					<Routes>
 						<Route path="/" element={<Home />} />
