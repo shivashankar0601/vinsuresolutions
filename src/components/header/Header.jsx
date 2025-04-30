@@ -132,7 +132,7 @@ const Header = () => {
 					href="./"
 					className="text-4xl mx-4 cursor-pointer py-1.5 hover:!no-underline !font-bold !text-white"
 				>
-					Vinsure Solutions
+					Vinsure Pro
 				</Typography>
 
 				<div className="hidden lg:block">

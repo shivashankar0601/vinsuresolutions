@@ -149,6 +149,11 @@ a:disabled {
 	background-color: var(--primary);
 }
 
+.bg-primary-10 {
+	background-color: var(--primary);
+	opacity: 0.1;
+}
+
 .bg-primary-dark {
 	background-color: var(--primary-dark);
 }

@@ -21,7 +21,7 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
 	return (
 		<footer className="vs-footer pt-3 text-white relative w-full">
-			<div className="mx-auto w-full max-w-7xl px-8 grid grid-cols-1 justify-between md:grid-cols-2">
+			<div className="mx-auto w-full container px-8 grid grid-cols-1 justify-between md:grid-cols-2">
 				<div className="text-4xl font-bold my-auto cursor-pointer text-center">
 					<a href="#" className="hover:!no-underline">
 						Vinsure Solutions
@@ -48,7 +48,7 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="border-t border-blue-gray-50 mt-6"></div>
-			<div className="mx-auto w-full max-w-7xl px-8 mt-3 flex w-full flex-col items-center justify-center py-4 md:flex-row md:justify-between">
+			<div className="mx-auto w-full container px-8 mt-3 flex w-full flex-col items-center justify-center py-4 md:flex-row md:justify-between">
 				<span className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0">
 					&copy; {currentYear}{" "}
 					<a
