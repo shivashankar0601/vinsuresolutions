@@ -10,8 +10,10 @@
 
 /* Blue theme */
 :root {
-	--primary: #1e3a8a;
-	--primary-dark: #4f9eea;
+	/* --primary: #1e3a8a; */
+	--primary: #0c0950;
+	/* --primary: #272757; */
+	--primary-dark: #1208d1;
 }
 
 /* Indigo theme */

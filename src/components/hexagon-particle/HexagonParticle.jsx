@@ -51,7 +51,7 @@ const HexagonParticle = ({ height }) => {
 			},
 			particles: {
 				color: {
-					value: "#1e3a8a",
+					value: "#0c0950",
 				},
 				links: {
 					enable: false,
