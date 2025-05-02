@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import JobSearch from "./pages/job-search/JobSearch";
 import Home from "./pages/home/Home";
+import ComingSoon from "@components/coming-soon/ComingSoon";
 import { Toaster } from "react-hot-toast";
 import HexagonParticle from "./components/hexagon-particle/HexagonParticle";
 function App() {
@@ -19,7 +20,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/job-search" element={<JobSearch />} />
-						<Route path="*" element={<Home />} />
+						<Route path="*" element={<ComingSoon />} />
 						{/* <Route path="/about" element={<About />} />
 						<Route path="/features" element={<Features />} />
 						<Route path="/contact" element={<Contact />} />

@@ -76,7 +76,7 @@ const JobSearch = () => {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-10 gap-6 p-6 min-h-9/10">
 			{/* Filter Section */}
-			<div className="md:col-span-2 p-4 rounded-lg shadow-md border-2 border-gray-200">
+			<div className="md:col-span-2 p-4 rounded-lg shadow-md border-2 border-gray-200 bg-white">
 				<Typography variant="h3" className="mb-4 text-primary text-lg">
 					Filters
 				</Typography>
@@ -89,7 +89,7 @@ const JobSearch = () => {
 					>
 						Work Type
 					</Typography>
-					<div className="border-2 border-gray-100 rounded-lg p-4 pl-2">
+					<div className="border-2 border-gray-100 rounded-lg p-4 pl-2 bg-white">
 						{categories.map((cat) => (
 							<div className="flex items-center" key={cat}>
 								<Checkbox
@@ -126,7 +126,7 @@ const JobSearch = () => {
 					>
 						Work Type
 					</Typography>
-					<div className="border-2 border-gray-100 rounded-lg p-4 pl-2">
+					<div className="border-2 border-gray-100 rounded-lg p-4 pl-2 bg-white">
 						{workTypes.map((type) => (
 							<div key={type} className="flex items-center">
 								<Checkbox
@@ -154,7 +154,7 @@ const JobSearch = () => {
 			</div>
 
 			{/* Job Search Results Section */}
-			<div className="md:col-span-8 space-y-6">
+			<div className="md:col-span-8 space-y-6 bg-white">
 				{/* Search Bar + Sort */}
 				<div className="w-full flex flex-col sm:flex-row items-center gap-4">
 					<div className="w-4/5 sm:w-2/3">
