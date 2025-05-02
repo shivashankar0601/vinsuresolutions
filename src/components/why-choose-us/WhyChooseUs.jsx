@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
 		<section className="py-20">
 			<div className="container mx-auto px-6 text-center">
 				<Typography variant="h2" className="text-gray-800 mb-6">
-					Why Choose Vinsure Solutions ?
+					Why Choose Vinsure ?
 				</Typography>
 				<Typography
 					variant="lead"

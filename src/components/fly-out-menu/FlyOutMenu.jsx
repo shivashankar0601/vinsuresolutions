@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Typography, MenuItem } from "@material-tailwind/react";
-import CourseCard from "./CourseCard";
 import { Square3Stack3DIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import CourseCard from "./CourseCard";
+import ServiceCard from "./ServiceCard";
 
 const iconHeight = "h-[24px] w-[24px]";
 
-const FlyOutMenu = ({ navListMenuItems }) => {
+const FlyOutMenu = ({ title, navListMenuItems, card }) => {
 	const [activeMenu, setActiveMenu] = useState(false);
 	const [activeSubmenu, setActiveSubmenu] = useState(null);
 	const menuRef = useRef(null);
@@ -48,6 +49,15 @@ const FlyOutMenu = ({ navListMenuItems }) => {
 		}, 200);
 	};
 
+	const getCard = (card, menu) => {
+		switch (card) {
+			case "CourseCard":
+				return <CourseCard course={menu} />;
+			case "ServiceCard":
+				return <ServiceCard services={menu} />;
+		}
+	};
+
 	return (
 		<div className="relative" ref={menuRef}>
 			<Typography
@@ -60,7 +70,7 @@ const FlyOutMenu = ({ navListMenuItems }) => {
 			>
 				<MenuItem className="hidden items-center gap-2 font-medium  lg:flex lg:rounded-full">
 					<Square3Stack3DIcon className={iconHeight} />
-					<span className="text-lg">Training</span>
+					<span className="text-lg">{title}</span>
 					<ChevronDownIcon
 						strokeWidth={2}
 						className={`h-4 w-4 mt-[5px] transition-transform ${
@@ -100,7 +110,7 @@ const FlyOutMenu = ({ navListMenuItems }) => {
 											{item.subMenu.title}
 										</h3>
 									</div> */}
-									<CourseCard course={item.subMenu} />
+									{getCard(card, item.subMenu)}
 								</div>
 							)}
 						</div>

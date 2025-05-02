@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Logo from "@assets/logo";
+
 import "./Header.css";
 import {
 	Navbar,
@@ -20,7 +22,7 @@ import {
 
 import FlyOutMenu from "../fly-out-menu/FlyOutMenu";
 
-const navListMenuItems = [
+const trainingMenuItems = [
 	{
 		title: "Java",
 		subMenu: {
@@ -78,20 +80,86 @@ const navListMenuItems = [
 	},
 ];
 
+const servicesMenuItems = [
+	{
+		title: "BPO",
+		subMenu: {
+			title: "Business Process Outsourcing",
+			description:
+				"Our BPO services streamline your business operations through expert customer support, back-office processing, and data entry — allowing you to focus on core business growth.",
+			keyFeatures: ["24/7 Support", "Cost Efficiency", "Scalability"],
+		},
+	},
+	{
+		title: "KPO",
+		subMenu: {
+			title: "Knowledge Process Outsourcing",
+			description:
+				"We deliver specialized knowledge services including financial analysis, legal processing, market research, and high-end analytics with domain expertise.",
+			keyFeatures: [
+				"Expert Talent Pool",
+				"Data-Driven Insights",
+				"High-Quality Delivery",
+			],
+		},
+	},
+	{
+		title: "Web Development",
+		subMenu: {
+			title: "Responsive Web Solutions",
+			description:
+				"Our web development team crafts modern, responsive, and scalable websites tailored to your business goals. We handle everything from frontend design to backend systems.",
+			keyFeatures: [
+				"React, Angular, Vue",
+				"Node.js, Django",
+				"SEO Optimization",
+			],
+		},
+	},
+	{
+		title: "App Development",
+		subMenu: {
+			title: "Mobile App Development",
+			description:
+				"We build high-performance Android and iOS apps using native and cross-platform technologies. From design to deployment, we ensure your app delivers great user experiences.",
+			keyFeatures: [
+				"React Native & Flutter",
+				"iOS & Android",
+				"App Store Deployment",
+			],
+		},
+	},
+];
+
 const navListItems = [
 	{ label: "Payroll", icon: BanknotesIcon },
 	{ label: "Recruitment", icon: UserGroupIcon },
-	{ label: "Training", icon: Square3Stack3DIcon },
-	{ label: "BPO & KPO", icon: GlobeAltIcon },
+	{
+		label: "Training",
+		icon: Square3Stack3DIcon,
+		subMenu: trainingMenuItems,
+		card: "CourseCard",
+	},
+	{
+		label: "Services",
+		icon: GlobeAltIcon,
+		subMenu: servicesMenuItems,
+		card: "ServiceCard",
+	},
 	{ label: "About Us", icon: InformationCircleIcon },
 ];
 
 const NavList = () => (
 	<ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-		{navListItems.map(({ label, icon }) =>
-			label === "Training" ? (
+		{navListItems.map(({ label, icon, card, subMenu }) =>
+			subMenu ? (
 				// <NavListMenu key={label} />
-				<FlyOutMenu key={label} navListMenuItems={navListMenuItems} />
+				<FlyOutMenu
+					key={label}
+					title={label}
+					card={card}
+					navListMenuItems={subMenu}
+				/>
 			) : (
 				<Typography
 					key={label}
@@ -127,13 +195,9 @@ const Header = () => {
 	return (
 		<Navbar className="vs-nav bg-primary text-white border-0 border-radius-none py-8 rounded-none">
 			<div className="relative mx-auto flex items-center justify-between container">
-				<Typography
-					as="a"
-					href="./"
-					className="text-4xl mx-4 cursor-pointer py-1.5 hover:!no-underline !font-bold !text-white"
-				>
-					Vinsure Pro
-				</Typography>
+				<div className="cursor-pointer">
+					<Logo height="44" logoFill="#FFF" textFill="#FFF" />
+				</div>
 
 				<div className="hidden lg:block">
 					<NavList />

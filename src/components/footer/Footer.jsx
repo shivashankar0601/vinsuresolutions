@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import Logo from "@assets/logo";
 
 const LINKS = [
 	{
@@ -24,7 +25,12 @@ export default function Footer() {
 			<div className="mx-auto w-full container px-8 grid grid-cols-1 justify-between md:grid-cols-2">
 				<div className="text-4xl font-bold my-auto cursor-pointer text-center">
 					<a href="#" className="hover:!no-underline">
-						Vinsure Solutions
+						<Logo
+							height="100"
+							width="150"
+							logoFill="#FFF"
+							textFill="#FFF"
+						/>
 					</a>
 				</div>
 				<div className="grid grid-cols-3 justify-between gap-4 text-center">
@@ -53,9 +59,9 @@ export default function Footer() {
 					&copy; {currentYear}{" "}
 					<a
 						href="#"
-						className="hover:!no-underline hover:font-bold hover:px-1 px-2"
+						className="hover:!no-underline hover:font-bold hover:px-1 px-2 cursor-pointer"
 					>
-						Vinsure Solutions
+						Vinsure
 					</a>
 					. All Rights Reserved.
 				</span>

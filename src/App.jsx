@@ -12,13 +12,14 @@ function App() {
 	return (
 		<>
 			<Router>
-				<Header height="500px" />
+				<Header />
 				<Toaster position="top-right" />
 				<div className="container mx-auto px-4">
 					<HexagonParticle />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/job-search" element={<JobSearch />} />
+						<Route path="*" element={<Home />} />
 						{/* <Route path="/about" element={<About />} />
 						<Route path="/features" element={<Features />} />
 						<Route path="/contact" element={<Contact />} />
