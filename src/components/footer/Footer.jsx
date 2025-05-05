@@ -22,12 +22,12 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
 	return (
 		<footer className="vs-footer pt-3 text-white relative w-full">
-			<div className="mx-auto w-full container px-8 grid grid-cols-1 justify-between md:grid-cols-2">
+			<div className="mx-auto mt-5 w-full container px-8 grid grid-cols-1 justify-between md:grid-cols-2">
 				<div className="text-4xl font-bold my-auto cursor-pointer text-center">
 					<a href="#" className="hover:!no-underline">
 						<Logo
-							height="100"
-							width="150"
+							height="60"
+							width="400"
 							logoFill="#FFF"
 							textFill="#FFF"
 						/>

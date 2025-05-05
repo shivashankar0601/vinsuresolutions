@@ -76,7 +76,7 @@ const HexagonParticle = ({ height }) => {
 					value: 0.05,
 				},
 				shape: {
-					type: "polygon",
+					type: "triangle",
 					stroke: {
 						width: 0,
 						color: "#000",

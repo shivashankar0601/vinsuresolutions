@@ -1,10 +1,13 @@
 import React from "react";
-import { Typography, Card, Chip } from "@material-tailwind/react";
+import { Typography, Card, Chip, Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const CourseCard = ({ course }) => {
 	if (!course) return null;
+
+	const navigate = useNavigate();
 
 	const { title, description, duration, level, certification } = course;
 
@@ -52,6 +55,25 @@ const CourseCard = ({ course }) => {
 						Certification Included
 					</div>
 				)}
+
+				{/* Call to Action */}
+				<Button
+					size="sm"
+					className="mt-2 text-primary"
+					fullWidth
+					ripple={true}
+					onClick={() => {
+						navigate("/courses", {
+							state: {
+								course: course,
+							},
+							replace: true,
+						});
+						window.scrollTo(0, 0);
+					}}
+				>
+					Learn More
+				</Button>
 			</div>
 		</Card>
 	);

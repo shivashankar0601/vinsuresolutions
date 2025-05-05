@@ -21,6 +21,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import FlyOutMenu from "../fly-out-menu/FlyOutMenu";
+import { useNavigate } from "react-router-dom";
 
 const trainingMenuItems = [
 	{
@@ -184,6 +185,8 @@ const Header = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		const resizeHandler = () => {
 			if (window.innerWidth >= 960) setIsNavOpen(false);
@@ -195,7 +198,13 @@ const Header = () => {
 	return (
 		<Navbar className="vs-nav bg-primary text-white border-0 border-radius-none py-8 rounded-none">
 			<div className="relative mx-auto flex items-center justify-between container">
-				<div className="cursor-pointer">
+				<div
+					className="cursor-pointer"
+					onClick={() => {
+						window.scrollTo(0, 0);
+						navigate("/", { replace: true });
+					}}
+				>
 					<Logo height="44" logoFill="#FFF" textFill="#FFF" />
 				</div>
 
@@ -203,26 +212,27 @@ const Header = () => {
 					<NavList />
 				</div>
 
-				{window.innerWidth < 640 && (
+				{window.innerWidth < 480 && (
 					<IconButton
 						size="sm"
 						color="white"
-						variant="text"
 						onClick={toggleIsNavOpen}
-						className="l-0 ml-auto mr-2 lg:hidden bg-white"
+						className="l-0 ml-auto mr-2 lg:hidden bg-transparent"
 					>
 						<Bars2Icon className="h-6 w-6" />
 					</IconButton>
 				)}
 
 				{/* <ProfileMenu /> */}
-				<Button
-					variant="text"
-					color="white"
-					className="rounded-full bg-white text-primary btn-primary hover:shadow-md hover:!bg-gray-500 hover:!opacity-50 !cursor-not-allowed"
-				>
-					Login
-				</Button>
+				{window.innerWidth > 480 && (
+					<Button
+						variant="text"
+						color="white"
+						className="rounded-full bg-white text-primary btn-primary hover:shadow-md hover:!bg-gray-500 hover:!opacity-50 !cursor-not-allowed"
+					>
+						Login
+					</Button>
+				)}
 				{/* 
 				<Button
 					variant="text"

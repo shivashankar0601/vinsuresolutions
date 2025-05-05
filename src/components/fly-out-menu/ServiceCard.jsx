@@ -1,10 +1,13 @@
 import { Card, Typography, Chip, Button } from "@material-tailwind/react";
 import { CheckCircleIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from "react-router-dom";
 
-const ServiceCard = ({ services }) => {
-	if (!services) return null;
+const ServiceCard = ({ service }) => {
+	if (!service) return null;
 
-	const { title, description, keyFeatures } = services;
+	const { title, description, keyFeatures } = service;
+
+	const navigate = useNavigate();
 
 	return (
 		<Card className="relative bg-gradient-to-br from-white to-gray-100 shadow-lg rounded-xl p-6 max-w-md transition hover:shadow-2xl hover:scale-[1.02] duration-300">
@@ -55,6 +58,15 @@ const ServiceCard = ({ services }) => {
 				className="mt-2 text-primary"
 				fullWidth
 				ripple={true}
+				onClick={() => {
+					navigate("/services", {
+						state: {
+							service: service,
+						},
+						replace: true,
+					});
+					window.scrollTo(0, 0);
+				}}
 			>
 				Learn More
 			</Button>

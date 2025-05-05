@@ -64,7 +64,8 @@ const Search = () => {
 					variant="h2"
 					className="text-gray-800 font-semibold"
 				>
-					Find Your Next Opportunity
+					{/* Find Your Next Opportunity */}
+					Unlock Your Future
 				</Typography>
 				<Typography variant="paragraph" className="text-gray-600 mt-2">
 					Explore jobs that match your skills and passion.

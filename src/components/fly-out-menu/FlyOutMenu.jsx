@@ -54,7 +54,7 @@ const FlyOutMenu = ({ title, navListMenuItems, card }) => {
 			case "CourseCard":
 				return <CourseCard course={menu} />;
 			case "ServiceCard":
-				return <ServiceCard services={menu} />;
+				return <ServiceCard service={menu} />;
 		}
 	};
 
